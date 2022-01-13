@@ -1,13 +1,24 @@
+import react, {useState,useEffect} from 'react'
+import GiftCard from './GIftCard'
 
-function SearchField(){
+function SearchField(props){
     
-    
+   const {setCode} = props
+    //make this asynch to be able to use await?
+    function handleSearch(event){
+        setCode(event.target.value)
+        
+        
+    }
     
     
     
     return (
-        <div>
-            <h1>Hello</h1>
+        <div id="searchDiv">
+            
+            <input type="search" className="bar" name="inpt" placeholder='Search'  onChange={handleSearch}></input>
+            
+           
         </div>
     )
 }

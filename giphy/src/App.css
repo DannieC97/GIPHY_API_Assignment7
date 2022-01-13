@@ -1,14 +1,36 @@
+html{
+  background-color: rgb(220,220,220);
+}
 .App {
   text-align: center;
+  margin: 20px;
+  border: 5px solid grey;
+  border-radius: 10px;
+  
 }
 img{
   height:10%;
   width: 10%;
 }
-.vids{
+.vids img{
   /* Centered? */
-  display: block;
+  width: 200px;
+  height: 135px;
   margin-left: auto;
   margin-right: auto;
-  
+  padding: 5px;
+  border-radius: 10px;
+}
+
+#searchDiv {
+  margin: 15px;
+}
+.vids {
+  margin-left: 100px;
+  margin-right: 100px;
+  display: inline-block;
+}
+.bar {
+  height: 25px;
+  font-weight: bold;
 }
