@@ -31,6 +31,31 @@ img{
   display: inline-block;
 }
 .bar {
-  height: 25px;
+  height: 30px;
+  width: 300px;
   font-weight: bold;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: white;
+  border: 2px solid grey;
+}
+#rating {
+  border-radius: 10px;
+  height: 25px;
+  background-color: white;
+  border: 2px solid grey;
+}
+.rating-label{
+  padding-left: 10px;
+  padding-right: 5px;
+}
+.gifs-label{
+  padding-left: 10px;
+  padding-right: 5px;
+}
+#inputAns{
+  border-radius: 10px;
+  height: 20px;
+  background-color: white;
+  border: 2px solid grey;
 }
