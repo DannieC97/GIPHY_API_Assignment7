@@ -8,21 +8,16 @@ function App() {
   const [code, setCode] = useState("")
   const [data, setData] = useState([])
   const [trending, setTrending] = useState(false)
-  const [rate,setRate] = useState("")
-  
-
-  
-
-  function filter(data) {
-    data.map((item) => {
-      return <img key={item.id} src={item.images.original.url} />
-
-    })
-  }
+  const [rate, setRate] = useState("")
+  const [gifsShown, setGifsShown] = useState(35)
 
   useEffect(async () => {
     (async () => {
-      const response = await fetch(`https://api.giphy.com/v1/gifs/search?q=${code}&limit=20&api_key=g5GU1WDPDqLyo6rsrWc3vJeQ3qypwP86`);
+      let url = `https://api.giphy.com/v1/gifs/search?q=${code}&limit=${gifsShown}&api_key=g5GU1WDPDqLyo6rsrWc3vJeQ3qypwP86`
+      if (code === "") {
+        url = `http://api.giphy.com/v1/gifs/trending?&limit=${gifsShown}&api_key=g5GU1WDPDqLyo6rsrWc3vJeQ3qypwP86`
+      }
+      const response = await fetch(url);
       const data = await response.json();
       console.log(data);
       let res = data.data
@@ -34,15 +29,16 @@ function App() {
         setData(res);
       }
     })();
-  }, [code,rate])
+  }, [code, rate, gifsShown])
   console.log(code)
   return (
     <div className="App">
-      
+
       <SearchField
         setCode={setCode}
         setRate={setRate}
-        setTrending={setTrending} />
+        setTrending={setTrending}
+        setGifsShown={setGifsShown} />
 
 
       <GiftCard
