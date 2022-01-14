@@ -6,15 +6,11 @@ function GiftCard(props){
     
     
     
-    
-    
-    
-    
     return (
         <div className='vids'>
            
                {data.map((item)=>{
-                   return <img key={item.id}src={item.images.original.url} />
+                   return <img key={item.id}src={item.images.preview_gif.url} />
                 //   src={props.url} 
                })}
            
