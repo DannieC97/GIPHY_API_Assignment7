@@ -13,7 +13,7 @@ function App() {
 
   useEffect(async () => {
     (async () => {
-      let url = `https://api.giphy.com/v1/gifs/search?q=${code}&limit=${gifsShown}&api_key=g5GU1WDPDqLyo6rsrWc3vJeQ3qypwP86`
+      let url = `http://api.giphy.com/v1/gifs/search?q=${code}&limit=${gifsShown}&api_key=g5GU1WDPDqLyo6rsrWc3vJeQ3qypwP86`
       if (code === "") {
         url = `http://api.giphy.com/v1/gifs/trending?&limit=${gifsShown}&api_key=g5GU1WDPDqLyo6rsrWc3vJeQ3qypwP86`
       }
@@ -22,15 +22,15 @@ function App() {
       console.log(data);
       let res = data.data
       if (trending) {
-        console.log(rate)
         let filteredData = res.filter(x => x.rating === rate)
         setData(filteredData);
       } else {
         setData(res);
       }
+      console.log(code)
     })();
   }, [code, rate, gifsShown])
-  console.log(code)
+  
   return (
     <div className="App">
 
