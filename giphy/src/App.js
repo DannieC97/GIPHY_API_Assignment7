@@ -13,12 +13,12 @@ function App() {
 
   useEffect(async () => {
     (async () => {
-      let url = `http://api.giphy.com/v1/gifs/search?q=${code}&limit=${gifsShown}&api_key=g5GU1WDPDqLyo6rsrWc3vJeQ3qypwP86`
+      let url = `https://api.giphy.com/v1/gifs/search?q=${code}&limit=${gifsShown}&api_key=g5GU1WDPDqLyo6rsrWc3vJeQ3qypwP86`
       if (code === "") {
-        url = `http://api.giphy.com/v1/gifs/trending?&limit=${gifsShown}&api_key=g5GU1WDPDqLyo6rsrWc3vJeQ3qypwP86`
+        url = `https://api.giphy.com/v1/gifs/trending?&limit=${gifsShown}&api_key=g5GU1WDPDqLyo6rsrWc3vJeQ3qypwP86`
       }
-      const response = await fetch(url);
-      const data = await response.json();
+      let response = await fetch(url);
+      let data = await response.json();
       console.log(data);
       let res = data.data
       if (trending) {
